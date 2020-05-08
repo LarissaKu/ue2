@@ -1,0 +1,29 @@
+%notice{
+  padding: 2em 1em;
+  margin: 1em;
+  border: solid black;
+}
+
+.notice-info{
+  @extend %notice;
+  color: deepskyblue;
+  border-color: deepskyblue;
+}
+
+.notice-warning{
+  @extend %notice;
+  color: coral;
+  border-color: coral;
+}
+
+.notice-error{
+  @extend %notice;
+  color: palevioletred;
+  border-color: palevioletred;
+}
+
+@each $name in 'info' 'warning' 'error'{
+  .notice-#{$name}{
+    background: no-repeat url('img/icon-#{$name}.svg') right top;
+  }
+}
